@@ -21,13 +21,13 @@ public class ModuleFormController {
     public String moduleForm(Model model){
         List<Module> allModules = moduleService.getAllModules();
 
-        model.addAttribute("module", new Module());
-        model.addAttribute("allmodules", allModules);
+        model.addAttribute("pModule", new Module());
+        model.addAttribute("allModules", allModules);
         return "module";
     }
     @PostMapping("/add-module")
-    public String moduleSubmit(@ModelAttribute("module") Module module, @ModelAttribute("allmodules") Module selectedModule, Model model){
-        model.addAttribute("module", module);
+    public String moduleSubmit(@ModelAttribute("pModule") Module module, Model model){
+        model.addAttribute("pModule", module);
         if (module.getParentModule() != null){
             module.setDepth(module.getParentModule().getDepth()+1);
             if (module.getDepth() > 2){

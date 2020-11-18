@@ -6,14 +6,14 @@
 </head>
 <body>
 <h1>Add Module</h1>
-<form action="#" th:action="@{/api/v1/module/add-module}" th:field="${module}" method="post">
-    <p>Name: <input type="text" th:field="*{module.name}"/></p>
+<form action="#" th:action="@{/api/v1/module/add-module}" th:field="${pModule}" method="post">
+    <p>Name: <input type="text" th:field="*{pModule.name}"/></p>
     <p>Parent:
         <option value=""></option>
         <label for="dropOperator"></label>
-        <select class="form-control" th:field="${module.parentModule}" id="dropOperator">
+        <select class="form-control" th:field="${pModule.parentModule}" id="dropOperator">
             <option selected value=" "> -- select a module --</option>
-            <option th:each="amodule : ${allmodules}"
+            <option th:each="amodule : ${allModules}"
                     th:value="${amodule.id}"
                     th:text="${amodule.name}"></option>
         </select>
