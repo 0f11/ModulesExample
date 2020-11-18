@@ -2,6 +2,8 @@ How to run:
 
 This is maven project. Go to the directory containing the pom.xml for this project. It should be the same directory which contains this file.
 
+Run mvn sping-boot:run
+
 It will start up the server at 8080 which can be changed in the application.properties file.
 
 Application uses H2 database which can be accessed http://localhost:8080/h2-console/
