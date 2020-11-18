@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Done</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'Module: ' + ${module.name} + ' has been added'" />
+<a href="/api/v1/module/add-module">Submit another module</a>
+</body>
+</html>

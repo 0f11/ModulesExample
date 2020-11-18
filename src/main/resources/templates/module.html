@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Add Module</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Add Module</h1>
+<form action="#" th:action="@{/api/v1/module/add-module}" th:field="${module}" method="post">
+    <p>Name: <input type="text" th:field="*{module.name}"/></p>
+    <p>Parent:
+        <option value=""></option>
+        <label for="dropOperator"></label>
+        <select class="form-control" th:field="${module.parentModule}" id="dropOperator">
+            <option selected value=" "> -- select a module --</option>
+            <option th:each="amodule : ${allmodules}"
+                    th:value="${amodule.id}"
+                    th:text="${amodule.name}"></option>
+        </select>
+    </p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>
