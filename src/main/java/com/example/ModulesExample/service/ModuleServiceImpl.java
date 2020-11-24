@@ -17,7 +17,7 @@ public class ModuleServiceImpl implements ModuleService {
     @Autowired
     ModuleRepository moduleRepository;
 
-    private Function<Module, ModuleDTO> mapToDTO = m -> ModuleDTO.builder()
+    private final Function<Module, ModuleDTO> mapToDTO = m -> ModuleDTO.builder()
             .id(m.getId())
             .name(m.getName())
             .depth(m.getDepth())
