@@ -20,7 +20,6 @@ public class ModuleServiceImpl implements ModuleService {
     private final Function<Module, ModuleDTO> mapToDTO = m -> ModuleDTO.builder()
             .id(m.getId())
             .name(m.getName())
-            .depth(m.getDepth())
             .children(m.getChildren())
             .build();
 

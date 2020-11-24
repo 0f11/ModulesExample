@@ -15,7 +15,5 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 public class ModuleDTO {
     private Long id;
     private String name;
-    private Module parent;
-    private int depth;
     private List<Module> children;
 }
